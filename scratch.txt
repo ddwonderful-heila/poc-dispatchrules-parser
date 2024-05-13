@@ -1,0 +1,35 @@
+haruspecs/
+│
+├── haruspecs/
+│   ├── __init__.py
+│   ├── engine/
+│   │   ├── __init__.py
+│   │   ├── parser.py         # Contains the parsing logic for rules
+│   │   ├── evaluator.py      # Evaluates conditions and generates dispatch orders
+│   │   └── models.py         # Defines the data models, e.g., EnergyNode, DispatchOrder
+│   │
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   └── helpers.py        # Utility functions that might be used across the project
+│   │
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── settings.py       # Configuration settings, like constants, thresholds, etc.
+│   │
+│   └── tests/
+│       ├── __init__.py
+│       ├── test_parser.py    # Unit tests for the parser module
+│       ├── test_evaluator.py # Unit tests for the evaluator module
+│       └── test_helpers.py   # Unit tests for utility functions
+│
+├── docs/
+│   └── index.md              # Documentation files, replace with .rst if using Sphinx
+│
+├── scripts/
+│   ├── start_engine.py       # Script to start the rules engine
+│   └── setup_environment.py  # Script to set up any necessary environment
+│
+├── .gitignore
+├── setup.py                  # Setup script for setuptools
+├── requirements.txt          # Python dependencies
+└── README.md                 # Project overview and setup instructions
