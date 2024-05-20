@@ -1,0 +1,453 @@
+[
+    {
+        "conditions": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "parameter": "real_power",
+                            "microgrid_state_id": "heila-001/inverter-001",
+                            "comparator": ">",
+                            "value": 500
+                        },
+                        {
+                            "parameter": "voltage",
+                            "microgrid_state_id": "heila-001/something_else/inverter-001",
+                            "comparator": "<",
+                            "value": 300
+                        }
+                    ]
+                },
+                {
+                    "and": [
+                        {
+                            "parameter": "current",
+                            "microgrid_state_id": "heila-001/something_else/inverter-001",
+                            "comparator": "==",
+                            "value": 50
+                        },
+                        {
+                            "parameter": "param_xyz",
+                            "microgrid_state_id": "heila-001/something_else/inverter-001",
+                            "comparator": ">=",
+                            "value": 69
+                        }
+                    ]
+                }
+            ]
+        },
+        "command": {
+            "command": "send_some_command",
+            "microgrid_state_id": "heila-001/something_else/inverter-001",
+            "values": [
+                100,
+                200
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "parameter": "real_power",
+            "microgrid_state_id": "heila-002/inverter-001",
+            "comparator": "<",
+            "value": 200
+        },
+        "command": {
+            "command": "reduce_power",
+            "microgrid_state_id": "heila-002/inverter-001",
+            "values": [
+                150
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "and": [
+                {
+                    "parameter": "energy",
+                    "microgrid_state_id": "heila-003/storage-002",
+                    "comparator": ">",
+                    "value": 400
+                },
+                {
+                    "parameter": "frequency",
+                    "microgrid_state_id": "heila-003/utility-001",
+                    "comparator": "==",
+                    "value": 60
+                }
+            ]
+        },
+        "command": {
+            "command": "regulate_frequency",
+            "microgrid_state_id": "heila-003/grid",
+            "values": [
+                59.5,
+                60.5
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "and": [
+                {
+                    "parameter": "voltage",
+                    "microgrid_state_id": "heila-004/inverter-003",
+                    "comparator": ">=",
+                    "value": 450
+                },
+                {
+                    "parameter": "current",
+                    "microgrid_state_id": "heila-004/inverter-003",
+                    "comparator": "<",
+                    "value": 100
+                }
+            ]
+        },
+        "command": {
+            "command": "optimize_voltage",
+            "microgrid_state_id": "heila-004/inverter-003",
+            "values": [
+                75
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "parameter": "temperature",
+            "microgrid_state_id": "heila-005/sensor-001",
+            "comparator": ">",
+            "value": 30
+        },
+        "command": {
+            "command": "activate_cooling",
+            "microgrid_state_id": "heila-005/cooling_system",
+            "values": [
+                20
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "parameter": "humidity",
+            "microgrid_state_id": "heila-006/sensor-002",
+            "comparator": "<",
+            "value": 40
+        },
+        "command": {
+            "command": "activate_humidifier",
+            "microgrid_state_id": "heila-006/humidifier",
+            "values": [
+                50
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "or": [
+                {
+                    "parameter": "power_output",
+                    "microgrid_state_id": "heila-007/generator-001",
+                    "comparator": ">",
+                    "value": 300
+                },
+                {
+                    "parameter": "power_output",
+                    "microgrid_state_id": "heila-007/generator-002",
+                    "comparator": "<",
+                    "value": 100
+                }
+            ]
+        },
+        "command": {
+            "command": "balance_load",
+            "microgrid_state_id": "heila-007/load_balancer",
+            "values": [
+                150,
+                200
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "parameter": "battery_level",
+            "microgrid_state_id": "heila-008/storage-001",
+            "comparator": "==",
+            "value": 80
+        },
+        "command": {
+            "command": "charge_battery",
+            "microgrid_state_id": "heila-008/charger",
+            "values": [
+                100
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "and": [
+                {
+                    "parameter": "current",
+                    "microgrid_state_id": "heila-009/inverter-002",
+                    "comparator": "!=",
+                    "value": 60
+                },
+                {
+                    "parameter": "voltage",
+                    "microgrid_state_id": "heila-009/inverter-002",
+                    "comparator": "<",
+                    "value": 220
+                }
+            ]
+        },
+        "command": {
+            "command": "adjust_parameters",
+            "microgrid_state_id": "heila-009/controller",
+            "values": [
+                55,
+                75
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "and": [
+                {
+                    "parameter": "temperature",
+                    "microgrid_state_id": "heila-010/sensor-003",
+                    "comparator": ">",
+                    "value": 35
+                },
+                {
+                    "parameter": "humidity",
+                    "microgrid_state_id": "heila-010/sensor-003",
+                    "comparator": "<",
+                    "value": 50
+                }
+            ]
+        },
+        "command": {
+            "command": "activate_climate_control",
+            "microgrid_state_id": "heila-010/climate_control",
+            "values": [
+                25,
+                60
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "or": [
+                {
+                    "parameter": "real_power",
+                    "microgrid_state_id": "heila-011/inverter-004",
+                    "comparator": ">",
+                    "value": 400
+                },
+                {
+                    "and": [
+                        {
+                            "parameter": "voltage",
+                            "microgrid_state_id": "heila-011/inverter-004",
+                            "comparator": "<=",
+                            "value": 220
+                        },
+                        {
+                            "parameter": "frequency",
+                            "microgrid_state_id": "heila-011/utility-002",
+                            "comparator": "==",
+                            "value": 50
+                        }
+                    ]
+                }
+            ]
+        },
+        "command": {
+            "command": "manage_power",
+            "microgrid_state_id": "heila-011/inverter-004",
+            "values": [
+                200,
+                300
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "parameter": "current",
+                            "microgrid_state_id": "heila-012/inverter-005",
+                            "comparator": "==",
+                            "value": 100
+                        },
+                        {
+                            "parameter": "voltage",
+                            "microgrid_state_id": "heila-012/inverter-005",
+                            "comparator": "<",
+                            "value": 240
+                        }
+                    ]
+                },
+                {
+                    "parameter": "temperature",
+                    "microgrid_state_id": "heila-012/sensor-004",
+                    "comparator": ">",
+                    "value": 40
+                }
+            ]
+        },
+        "command": {
+            "command": "safety_check",
+            "microgrid_state_id": "heila-012/controller",
+            "values": [
+                10,
+                20
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "or": [
+                {
+                    "parameter": "voltage",
+                    "microgrid_state_id": "heila-013/inverter-006",
+                    "comparator": ">",
+                    "value": 230
+                },
+                {
+                    "and": [
+                        {
+                            "parameter": "real_power",
+                            "microgrid_state_id": "heila-013/inverter-006",
+                            "comparator": "<",
+                            "value": 500
+                        },
+                        {
+                            "parameter": "frequency",
+                            "microgrid_state_id": "heila-013/utility-003",
+                            "comparator": "==",
+                            "value": 60
+                        }
+                    ]
+                }
+            ]
+        },
+        "command": {
+            "command": "adjust_voltage",
+            "microgrid_state_id": "heila-013/inverter-006",
+            "values": [
+                50,
+                75
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "parameter": "current",
+                            "microgrid_state_id": "heila-014/inverter-007",
+                            "comparator": ">",
+                            "value": 70
+                        },
+                        {
+                            "parameter": "voltage",
+                            "microgrid_state_id": "heila-014/inverter-007",
+                            "comparator": ">",
+                            "value": 220
+                        }
+                    ]
+                },
+                {
+                    "parameter": "temperature",
+                    "microgrid_state_id": "heila-014/sensor-005",
+                    "comparator": "<",
+                    "value": 30
+                }
+            ]
+        },
+        "command": {
+            "command": "optimize_system",
+            "microgrid_state_id": "heila-014/controller",
+            "values": [
+                15,
+                25
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "or": [
+                {
+                    "parameter": "power_output",
+                    "microgrid_state_id": "heila-015/generator-003",
+                    "comparator": "<",
+                    "value": 150
+                },
+                {
+                    "and": [
+                        {
+                            "parameter": "energy",
+                            "microgrid_state_id": "heila-015/storage-003",
+                            "comparator": ">",
+                            "value": 350
+                        },
+                        {
+                            "parameter": "voltage",
+                            "microgrid_state_id": "heila-015/inverter-008",
+                            "comparator": "<=",
+                            "value": 240
+                        }
+                    ]
+                }
+            ]
+        },
+        "command": {
+            "command": "energy_management",
+            "microgrid_state_id": "heila-015/system",
+            "values": [
+                75,
+                125
+            ]
+        }
+    },
+    {
+        "conditions": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "parameter": "temperature",
+                            "microgrid_state_id": "heila-016/sensor-006",
+                            "comparator": ">=",
+                            "value": 45
+                        },
+                        {
+                            "parameter": "humidity",
+                            "microgrid_state_id": "heila-016/sensor-006",
+                            "comparator": "<",
+                            "value": 35
+                        }
+                    ]
+                },
+                {
+                    "parameter": "current",
+                    "microgrid_state_id": "heila-016/inverter-009",
+                    "comparator": ">",
+                    "value": 60
+                }
+            ]
+        },
+        "command": {
+            "command": "activate_emergency_cooling",
+            "microgrid_state_id": "heila-016/cooling_system",
+            "values": [
+                30,
+                50
+            ]
+        }
+    }
+]

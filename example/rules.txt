@@ -1,0 +1,16 @@
+real_power@heila-001/inverter-001 > 500 and voltage@heila-001/something_else/inverter-001 < 300 or current@heila-001/something_else/inverter-001 == 50 and param_xyz@heila-001/something_else/inverter-001 >= 69 -> send_some_command@heila-001/something_else/inverter-001:100,200
+real_power@heila-002/inverter-001 < 200 -> reduce_power@heila-002/inverter-001:150
+energy@heila-003/storage-002 > 400 and frequency@heila-003/utility-001 == 60 -> regulate_frequency@heila-003/grid:59.5,60.5
+voltage@heila-004/inverter-003 >= 450 and current@heila-004/inverter-003 < 100 -> optimize_voltage@heila-004/inverter-003:75
+temperature@heila-005/sensor-001 > 30 -> activate_cooling@heila-005/cooling_system:20
+humidity@heila-006/sensor-002 < 40 -> activate_humidifier@heila-006/humidifier:50
+power_output@heila-007/generator-001 > 300 or power_output@heila-007/generator-002 < 100 -> balance_load@heila-007/load_balancer:150,200
+battery_level@heila-008/storage-001 == 80 -> charge_battery@heila-008/charger:100
+current@heila-009/inverter-002 != 60 and voltage@heila-009/inverter-002 < 220 -> adjust_parameters@heila-009/controller:55,75
+temperature@heila-010/sensor-003 > 35 and humidity@heila-010/sensor-003 < 50 -> activate_climate_control@heila-010/climate_control:25,60
+real_power@heila-011/inverter-004 > 400 or voltage@heila-011/inverter-004 <= 220 and frequency@heila-011/utility-002 == 50 -> manage_power@heila-011/inverter-004:200,300
+current@heila-012/inverter-005 == 100 and voltage@heila-012/inverter-005 < 240 or temperature@heila-012/sensor-004 > 40 -> safety_check@heila-012/controller:10,20
+voltage@heila-013/inverter-006 > 230 or real_power@heila-013/inverter-006 < 500 and frequency@heila-013/utility-003 == 60 -> adjust_voltage@heila-013/inverter-006:50,75
+current@heila-014/inverter-007 > 70 and voltage@heila-014/inverter-007 > 220 or temperature@heila-014/sensor-005 < 30 -> optimize_system@heila-014/controller:15,25
+power_output@heila-015/generator-003 < 150 or energy@heila-015/storage-003 > 350 and voltage@heila-015/inverter-008 <= 240 -> energy_management@heila-015/system:75,125
+temperature@heila-016/sensor-006 >= 45 and humidity@heila-016/sensor-006 < 35 or current@heila-016/inverter-009 > 60 -> activate_emergency_cooling@heila-016/cooling_system:30,50
