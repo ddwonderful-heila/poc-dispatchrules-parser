@@ -48,4 +48,4 @@ python dispatch_rules.py -f path/to/rule_file.txt -o yaml
 ```
 
 ## Examples
-See [example/rules.txt] for example of rules and [example/parsed_rules.json] for parsing results. 
+See [rules.txt](example/rules.txt) for example of rules and [parsed_rules.json](example%2Fparsed_rules.json) for parsing results. 
