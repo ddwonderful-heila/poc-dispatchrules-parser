@@ -17,6 +17,9 @@ Check if multiple conditions are met using `and` and `or` logical operators.
 real_power@heila-001/inverter-001 > 500 and voltage@heila-001/something_else/inverter-001 < 300 or current@heila-001/something_else/inverter-001 == 50 -> send_some_command@heila-001/something_else/inverter-001:100,200
 ```
 
+### Further Examples
+See [rules.txt](example/rules.txt) for example of rules and [parsed_rules.json](example%2Fparsed_rules.json) for parsing results. 
+
 ## Rule Format
 ### Condition
 This part of the dispatch rule checks specific attributes:
@@ -46,6 +49,3 @@ The output format can be `json` (default) or `yaml`:
 ```sh
 python dispatch_rules.py -f path/to/rule_file.txt -o yaml
 ```
-
-## Examples
-See [rules.txt](example/rules.txt) for example of rules and [parsed_rules.json](example%2Fparsed_rules.json) for parsing results. 
