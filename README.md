@@ -46,3 +46,6 @@ The output format can be `json` (default) or `yaml`:
 ```sh
 python dispatch_rules.py -f path/to/rule_file.txt -o yaml
 ```
+
+## Examples
+See [example/rules.txt] for example of rules and [example/parsed_rules.json] for parsing results. 
